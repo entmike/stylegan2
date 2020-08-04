@@ -5,9 +5,9 @@ from keras.utils import get_file
 from ffhq_dataset.face_alignment import image_align
 from ffhq_dataset.landmarks_detector import LandmarksDetector
 
-# LANDMARKS_MODEL_URL = 'http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2'
+LANDMARKS_MODEL_URL = 'http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2'
 
-LANDMARKS_MODEL_URL = '/models/shape_predictor_68_face_landmarks.dat.bz2'
+LANDMARKS_LOCAL_FILE = '/models/shape_predictor_68_face_landmarks.dat.bz2'
 
 def unpack_bz2(src_path):
     data = bz2.BZ2File(src_path).read()
@@ -26,8 +26,11 @@ def main(arg1, arg2):
     python align_images.py /raw_images /aligned_images
     """
 
-    landmarks_model_path = unpack_bz2(get_file('shape_predictor_68_face_landmarks.dat.bz2',
-                                               LANDMARKS_MODEL_URL, cache_subdir='temp'))
+    #landmarks_model_path = unpack_bz2(get_file('shape_predictor_68_face_landmarks.dat.bz2',
+    #                                           LANDMARKS_MODEL_URL, cache_subdir='temp'))
+
+    landmarks_model_path = unpack_bz2(LANDMARKS_LOCAL_FILE)
+
     RAW_IMAGES_DIR = arg1
     ALIGNED_IMAGES_DIR = arg2
 

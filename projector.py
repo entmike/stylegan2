@@ -8,6 +8,7 @@ import numpy as np
 import tensorflow as tf
 import dnnlib
 import dnnlib.tflib as tflib
+import pickle
 
 from training import misc
 
@@ -41,7 +42,7 @@ class Projector:
         self._dlatents_expr         = None
         self._images_expr           = None
         self._target_images_var     = None
-        self._lpips                 = '/models/vgg16_zhang_perceptual.pkl'
+        self._lpips                 = pickle.load(open('/models/vgg16_zhang_perceptual.pkl','rb'), encoding='latin1')
         self._dist                  = None
         self._loss                  = None
         self._reg_sizes             = None

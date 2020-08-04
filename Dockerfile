@@ -21,7 +21,7 @@ RUN mkdir /models && cd /models && \
     wget http://d36zk2xti64re0.cloudfront.net/stylegan1/networks/metrics/vgg16_zhang_perceptual.pkl
 
 RUN cd / && \
-    mkdir /in /out /latents /records && \
+    mkdir /out /in /latents /records && \
     git clone https://github.com/entmike/stylegan2 && \
     cd /stylegan2
 
