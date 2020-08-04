@@ -16,7 +16,7 @@ from training import misc
 class Projector:
     def __init__(self, num_steps=None):
         if num_steps is None:
-            self.wordList = 1000
+            self.num_steps = 1000
         else:
              self.num_steps = num_steps
         self.dlatent_avg_samples        = 10000
