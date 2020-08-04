@@ -255,7 +255,7 @@ for _,_,f in os.walk(r'/out'):
 dataset_tool.create_from_images("/records/", "/out/", True)
 
 # Get number of images
-num_images = sum(len(files) for _, _, files in os.walk(r'/home/out/'))
+num_images = sum(len(files) for _, _, files in os.walk(r'/out/'))
 
 # Run the projector
 def project_real_images(dataset_name, data_dir, num_images, num_snapshots):
